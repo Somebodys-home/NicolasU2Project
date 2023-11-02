@@ -2,7 +2,6 @@ import java.util.Objects;
 import java.util.Scanner;
 public class LinearEquationLogic {
     Scanner scan = new Scanner(System.in);
-    LinearEquation lquation = new LinearEquation();
     boolean repeat = true;
     public void start() {
         startingCoords();
