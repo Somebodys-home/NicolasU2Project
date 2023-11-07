@@ -6,6 +6,7 @@ public class LinearEquationLogic {
     public void start() {
         startingCoords();
     }
+    LinearEquation lquation = new LinearEquation(0,0,0,0);
     public void startingCoords() {
         System.out.println("Welcome to the linear equation calculator!");
 
@@ -19,12 +20,17 @@ public class LinearEquationLogic {
             int x2 = lquation.getX(coord2);
             int y2 = lquation.getY(coord2);
 
-            new LinearEquation(x1, y1, x2, y2);
+            lquation = new LinearEquation(x1, y1, x2, y2);
 
             lquation.lineInfo();
 
+            System.out.print("\nEnter a value for x: ");
+            double inputtedXD = scan.nextDouble();
+            scan.nextLine();
+            System.out.println("\nThe point on the line is: (" + inputtedXD + ", " + lquation.coordinateForX(inputtedXD, lquation.getSlope(), lquation.getYIntercept()) + ")");
             System.out.print("Would you like to enter another pair of coordinates? y/n: ");
             String repeatYN = scan.nextLine();
+
             if (Objects.equals(repeatYN, "y")) {
                 repeat = true;
             } else {
